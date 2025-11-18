@@ -1,0 +1,53 @@
+    1  sudo fdisk -l
+    2  sudo fdisk /desk/sdd
+    3  n
+    4  sudo fdisk /dev/sdd
+    5  free
+    6  sudo mkswap /dev/ssd1
+    7  sudo mkswap /dev/sdd1
+    8  sudo swapon /dev/sdd1
+    9  free
+   10  sudo fdisk /dev/sdc
+   11  :wk
+   12  :exit
+   13  vagrant suspend
+   14  exit
+   15  bash
+   16  exit
+   17  ls -l
+   18  sudo fdisk -l
+   19  free
+   20  sudo pvs
+   21  ls -l
+   22  sudo fdisk -l
+   23  sudo pvs
+   24  sudo wipefs -a /dev/sdc1
+   25  sudo wipefs -a /dev/sdc2
+   26  sudo wipefs -a /dev/sdd1
+   27  sudo wipefs -a /dev/sdd2
+   28  sudo wipefs -a /dev/sdd3
+   29  sudo wipefs -a /dev/sdd4
+   30  sudo wipefs -a /dev/sdd5
+   31  sudo wipefs -a /dev/sdd6
+   32  sudo pvcreate /dev/sdd2 /dev/sdd3 /de
+   33  sudo pvcreate /dev/sdd2 /dev/sdd3 /dev/sdd5 /dev/sdd6 /dev/sdc1 /dev/sdc2
+   34  sudo pvs
+   35  sudo vgcreate vg_datos /dev/sdc1 /dev/sdd2
+   36  sudo pvs
+   37  sudo vgs
+   38  sudo vgcreate vg_web /dev/sdc2
+   39  sudo pvs
+   40  sudo lvcreate -L 1GB vg_web -n lv_web1
+   41  sudo fdisk-l
+   42  sudo fdisk -l
+   43  sudo lvcreate -L 512M vg_web -n lv_web2
+   44  sudo lvcreate -L 512M vg_web -n lv_web3
+   45  sudo pvs
+   46  sudo lvs
+   47  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web1
+   48  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web2
+   49  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web3
+   50  sudo pvs >pvs.txt
+   51  sudo vgs > vgs.txt
+   52  sudo lvs > lvs.txt
+   53  history > historial.lvm.txt
